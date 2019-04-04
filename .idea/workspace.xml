@@ -1,24 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="ee3ea79b-d30a-4167-b003-21eccbdd947d" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/minst/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/function/LReLU.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/function/ReLU.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/function/linear.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/function/sigmoid.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/function/softmax.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/function/tanh.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/layer/cnn_layer.py" beforeDir="false" afterPath="$PROJECT_DIR$/layer/cnn_layer.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/layer/nn_layer.py" beforeDir="false" afterPath="$PROJECT_DIR$/layer/nn_layer.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/minst.py" beforeDir="false" afterPath="$PROJECT_DIR$/minst.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/neural_network.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/open.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/standardize.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/t.py" beforeDir="false" />
-    </list>
+    <list default="true" id="ee3ea79b-d30a-4167-b003-21eccbdd947d" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -48,23 +31,11 @@
     <splitter split-orientation="horizontal" split-proportion="0.4893617">
       <split-first>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/minst.py">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="684">
-                  <caret line="36" column="30" lean-forward="true" selection-start-line="36" selection-start-column="30" selection-end-line="36" selection-end-column="30" />
-                  <folding>
-                    <element signature="e#0#27#0" expanded="true" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
+          <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/test.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="228">
-                  <caret line="12" column="62" lean-forward="true" selection-start-line="12" selection-start-column="62" selection-end-line="12" selection-end-column="62" />
+                <state relative-caret-position="646">
+                  <caret line="34" column="32" selection-start-line="34" selection-start-column="32" selection-end-line="34" selection-end-column="32" />
                   <folding>
                     <element signature="e#0#27#0" expanded="true" />
                   </folding>
@@ -72,13 +43,25 @@
               </provider>
             </entry>
           </file>
-          <file pinned="false" current-in-tab="true">
+          <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/function/neural_network.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="399">
-                  <caret line="21" column="24" lean-forward="true" selection-start-line="21" selection-start-column="24" selection-end-line="21" selection-end-column="24" />
+                <state relative-caret-position="-2713">
+                  <caret line="21" column="24" selection-start-line="21" selection-start-column="24" selection-end-line="21" selection-end-column="24" />
                   <folding>
                     <element signature="e#0#29#0" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/predict.py">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="190">
+                  <caret line="10" column="34" selection-start-line="10" selection-start-column="34" selection-end-line="10" selection-end-column="34" />
+                  <folding>
+                    <element signature="e#0#27#0" expanded="true" />
                   </folding>
                 </state>
               </provider>
@@ -92,7 +75,7 @@
             <entry file="file://$PROJECT_DIR$/layer/nn_layer.py">
               <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="171">
-                  <caret line="18" lean-forward="true" selection-start-line="18" selection-end-line="18" />
+                  <caret line="18" selection-start-line="18" selection-end-line="18" />
                   <folding>
                     <element signature="e#0#18#0" expanded="true" />
                   </folding>
@@ -104,7 +87,7 @@
             <entry file="file://$PROJECT_DIR$/layer/cnn_layer.py">
               <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="171">
-                  <caret line="9" column="33" lean-forward="true" selection-start-line="9" selection-start-column="33" selection-end-line="9" selection-end-column="33" />
+                  <caret line="9" column="33" selection-start-line="9" selection-start-column="33" selection-end-line="9" selection-end-column="33" />
                 </state>
               </provider>
             </entry>
@@ -189,6 +172,7 @@
         <option value="$PROJECT_DIR$/minst.py" />
         <option value="$PROJECT_DIR$/test.py" />
         <option value="$PROJECT_DIR$/function/neural_network.py" />
+        <option value="$PROJECT_DIR$/predict.py" />
       </list>
     </option>
   </component>
@@ -449,12 +433,12 @@
       <workItem from="1554261934818" duration="1507000" />
       <workItem from="1554265218283" duration="2159000" />
       <workItem from="1554270791404" duration="13571000" />
-      <workItem from="1554345957083" duration="711000" />
+      <workItem from="1554345957083" duration="1537000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="200304000" />
+    <option name="totallyTimeSpent" value="201130000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -521,7 +505,6 @@
     <option name="version" value="1" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/deep_network_2.py" />
     <entry file="file://$PROJECT_DIR$/../hw3/nnet.py" />
     <entry file="file://$PROJECT_DIR$/../hw3/nnet_2.py" />
     <entry file="file://$PROJECT_DIR$/../hw3/sigmoid.py" />
@@ -657,14 +640,14 @@
     <entry file="file://$PROJECT_DIR$/layer/cnn_layer.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="171">
-          <caret line="9" column="33" lean-forward="true" selection-start-line="9" selection-start-column="33" selection-end-line="9" selection-end-column="33" />
+          <caret line="9" column="33" selection-start-line="9" selection-start-column="33" selection-end-line="9" selection-end-column="33" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/layer/nn_layer.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="171">
-          <caret line="18" lean-forward="true" selection-start-line="18" selection-end-line="18" />
+          <caret line="18" selection-start-line="18" selection-end-line="18" />
           <folding>
             <element signature="e#0#18#0" expanded="true" />
           </folding>
@@ -692,6 +675,26 @@
     <entry file="file://$PROJECT_DIR$/minst/__init__.py">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
+    <entry file="file://$PROJECT_DIR$/function/neural_network.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-2713">
+          <caret line="21" column="24" selection-start-line="21" selection-start-column="24" selection-end-line="21" selection-end-column="24" />
+          <folding>
+            <element signature="e#0#29#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/predict.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="190">
+          <caret line="10" column="34" selection-start-line="10" selection-start-column="34" selection-end-line="10" selection-end-column="34" />
+          <folding>
+            <element signature="e#0#27#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/minst.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="684">
@@ -704,20 +707,10 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/test.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="228">
-          <caret line="12" column="62" lean-forward="true" selection-start-line="12" selection-start-column="62" selection-end-line="12" selection-end-column="62" />
+        <state relative-caret-position="646">
+          <caret line="34" column="32" selection-start-line="34" selection-start-column="32" selection-end-line="34" selection-end-column="32" />
           <folding>
             <element signature="e#0#27#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/function/neural_network.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="399">
-          <caret line="21" column="24" lean-forward="true" selection-start-line="21" selection-start-column="24" selection-end-line="21" selection-end-column="24" />
-          <folding>
-            <element signature="e#0#29#0" expanded="true" />
           </folding>
         </state>
       </provider>
