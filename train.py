@@ -32,9 +32,9 @@ if __name__ == "__main__":
              ['maxpooling', [(2, 2), 2]],
              ['convolution', [(5, 5), 16, 0, 1]],
              ['maxpooling', [(2, 2), 2]],
-             ['dropout', 0.2],
+             ['dropout', 0.4],
              ['hidden', 120],
-             ['dropout', 0.2],
+             ['dropout', 0.4],
              ['hidden', 84],
              ['output', OutNum]]
 
@@ -42,17 +42,18 @@ if __name__ == "__main__":
     DeepNet.method(activation=Act, output=Out)
 
     try:
-        TrainError = DeepNet.cnn_train(TrainImage, TrainLabel, 0.0002, 10)
+        TrainError = DeepNet.cnn_train(TrainImage, TrainLabel, 0.0005, 5)
         Result = DeepNet.predict(TestImage, TestLabel)
         print(Result[1], Result[2])
-        nn.store(DeepNet, 'cnn_model.npy')
+        nn.store(DeepNet, 'cnn_dropout_0.4.npy')
 
-        TrainError = DeepNet.cnn_train(TrainImage, TrainLabel, 0.00005, 10)
+        TrainError = DeepNet.cnn_train(TrainImage, TrainLabel, 0.0001, 5)
+        TrainError = DeepNet.cnn_train(TrainImage, TrainLabel, 0.00005, 5)
         Result = DeepNet.predict(TestImage, TestLabel)
         print(Result[1], Result[2])
-        nn.store(DeepNet, 'cnn_model.npy')
+        nn.store(DeepNet, 'cnn_dropout_0.4.npy')
 
-        Para = input('leanring rate and epochs').split()
+        Para = input('leanring rate and epochs\n').split()
         Rate = float(Para[0])
         Epoch = int(Para[1])
 
@@ -67,9 +68,9 @@ if __name__ == "__main__":
             print(Model)
             print(time2 - time1)
 
-            Argv = input('want to end?')
+            Argv = input('want to end?\n')
             if Argv == '1':
-                nn.store(DeepNet, 'cnn_model.npy')
+                nn.store(DeepNet, 'cnn_dropout_0.4.npy')
                 break
             else:
                 Para = Argv.split()
@@ -77,6 +78,6 @@ if __name__ == "__main__":
                 Epoch = int(Para[1])
 
     except KeyboardInterrupt:
-        nn.store(DeepNet, 'cnn_model.npy')
+        nn.store(DeepNet, 'cnn_dropout_0.4.npy')
         Result = DeepNet.predict(TestImage, TestLabel)
         print(Result[1], Result[2])

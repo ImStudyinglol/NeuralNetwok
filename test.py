@@ -24,19 +24,34 @@ if __name__ == "__main__":
     TestLabel = TestL.getLabel()
     TestLabel = minst.hot_encoding(TestLabel)
 
-    FeatNum = TrainImage.shape[1:]
-    OutNum = 10
+    DeepNet = nn.load('cnn_dropout_0.4.npy')
 
-    Model = [['input', FeatNum],
-             ['convolution', [(5, 5), 8, 2, 1]],
-             ['maxpooling', [(2, 2), 2]],
-             ['hidden', 120],
-             ['hidden', 84],
-             ['output', OutNum]]
+    try:
 
-    DeepNet = nn.NeuralNetwork(Model)
-    DeepNet.method(activation=Act, output=Out)
-    TrainError = DeepNet.cnn_train(TrainImage[0:1000],
-                                   TrainLabel[0:1000], 0.0005, 1)
-    Result = DeepNet.predict(TestImage[0:1000], TestLabel[0:1000])
-    print(Result[1], Result[2])
+        Para = input('leanring rate and epochs\n').split()
+        Rate = float(Para[0])
+        Epoch = int(Para[1])
+
+        while 1:
+
+            TrainError = DeepNet.cnn_train(TrainImage, TrainLabel, Rate, Epoch)
+            time1 = time.time()
+            Result = DeepNet.predict(TestImage, TestLabel)
+            time2 = time.time()
+            print(Result[1], Result[2])
+            print(Rate, Epoch)
+            print(time2 - time1)
+
+            Argv = input('want to end?\n')
+            if Argv == '1':
+                nn.store(DeepNet, 'cnn_dropout_0.4.npy')
+                break
+            else:
+                Para = Argv.split()
+                Rate = float(Para[0])
+                Epoch = int(Para[1])
+
+    except KeyboardInterrupt:
+        nn.store(DeepNet, 'cnn_dropout_0.4.npy')
+        Result = DeepNet.predict(TestImage, TestLabel)
+        print(Result[1], Result[2])

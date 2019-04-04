@@ -34,6 +34,6 @@ if __name__ == "__main__":
              ['output', OutNum]]
     '''
 
-    DeepNet = nn.load('cnn_minst.npy')
+    DeepNet = nn.load('cnn_dropout_0.4.npy')
 
     Result = DeepNet.predict(TestImage, TestLabel)
