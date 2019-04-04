@@ -1,4 +1,4 @@
-An neural network only based on numpy.
+A neural network only based on numpy.
 
 Implement general NN, CNN with any classical net structure.
 
@@ -19,7 +19,7 @@ Model = [['input', (1, 28, 28)],
          ['hidden', 84],
          ['output', 10]]
 
-A CNN trained in train.py, it can be load and make prediction in predict.py
+A CNN was trained in train.py, it can be load and make prediction in predict.py
 
 For detailed information, please contact: lshang6@wisc.edu
 
