@@ -32,30 +32,36 @@ if __name__ == "__main__":
              ['maxpooling', [(2, 2), 2]],
              ['convolution', [(5, 5), 16, 0, 1]],
              ['maxpooling', [(2, 2), 2]],
-             ['dropout', 0.4],
+             ['dropout', 0.3],
              ['hidden', 120],
-             ['dropout', 0.4],
+             ['dropout', 0.3],
              ['hidden', 84],
              ['output', OutNum]]
 
     DeepNet = nn.NeuralNetwork(Model)
-    DeepNet.method(activation=Act, output=Out)
+    DeepNet.method(activation=Act, output=Out, shuffle=True)
+    Path = 'cnn_double_dropout_0.3.npy'
 
     try:
         TrainError = DeepNet.cnn_train(TrainImage, TrainLabel, 0.0005, 5)
         Result = DeepNet.predict(TestImage, TestLabel)
         print(Result[1], Result[2])
-        nn.store(DeepNet, 'cnn_dropout_0.4.npy')
+        nn.save(DeepNet, Path)
 
-        TrainError = DeepNet.cnn_train(TrainImage, TrainLabel, 0.0001, 5)
-        TrainError = DeepNet.cnn_train(TrainImage, TrainLabel, 0.00005, 5)
+        TrainError = DeepNet.cnn_train(TrainImage, TrainLabel, 0.0002, 5)
         Result = DeepNet.predict(TestImage, TestLabel)
         print(Result[1], Result[2])
-        nn.store(DeepNet, 'cnn_dropout_0.4.npy')
+        nn.save(DeepNet, Path)
+
+        TrainError = DeepNet.cnn_train(TrainImage, TrainLabel, 0.00005, 10)
+        Result = DeepNet.predict(TestImage, TestLabel)
+        print(Result[1], Result[2])
+        nn.save(DeepNet, Path)
 
         Para = input('leanring rate and epochs\n').split()
         Rate = float(Para[0])
         Epoch = int(Para[1])
+        print(Model)
 
         while 1:
 
@@ -63,6 +69,7 @@ if __name__ == "__main__":
             time1 = time.time()
             Result = DeepNet.predict(TestImage, TestLabel)
             time2 = time.time()
+            nn.save(DeepNet, Path)
             print(Result[1], Result[2])
             print(Rate, Epoch)
             print(Model)
@@ -70,7 +77,6 @@ if __name__ == "__main__":
 
             Argv = input('want to end?\n')
             if Argv == '1':
-                nn.store(DeepNet, 'cnn_dropout_0.4.npy')
                 break
             else:
                 Para = Argv.split()
@@ -78,6 +84,6 @@ if __name__ == "__main__":
                 Epoch = int(Para[1])
 
     except KeyboardInterrupt:
-        nn.store(DeepNet, 'cnn_dropout_0.4.npy')
+        nn.save(DeepNet, Path)
         Result = DeepNet.predict(TestImage, TestLabel)
         print(Result[1], Result[2])

@@ -13,10 +13,13 @@ class NeuralNetwork:
         self._cross_entropy = softmax.cross_entropy
         self._get_predict = softmax.get_predict
         self._label_process = softmax.label_process
+        self._shuffle_index = lambda x: None  # do nothing
         self.lay_num = len(model)-1
+
         self.model = model
         self.activation_func = 'LReLU'
         self.output_func = 'tanh'
+        self.shuffle = False
 
         # initialize input layer
         layer = model[0]
@@ -61,7 +64,7 @@ class NeuralNetwork:
         self.output = Output(outp, curr)
         curr.set_next(self.output)
 
-    def method(self, activation=None, output=None):
+    def method(self, activation=None, output=None, shuffle=False):
         # set method
         if activation:
             self.activation_func = activation
@@ -75,6 +78,8 @@ class NeuralNetwork:
             self._cross_entropy = output.cross_entropy
             self._get_predict = output.get_predict
             self._label_process = output.label_process
+        if shuffle:
+            self._shuffle_index = lambda x: np.random.shuffle(x)
 
     def _loss(self, result, label, relabel):
         # compute loss and correct/incorrect during this epoch
@@ -91,10 +96,13 @@ class NeuralNetwork:
         relabel = self._label_process(label)
         # set learning rate
         Layer.rate = rate
-        for i in range(epoch):
+        index = np.arange(num)
+        for i in np.arange(epoch):
             result = []
+            # shuffle index
+            self._shuffle_index(index)
             # stochastic gradient descent
-            for j in range(num):
+            for j in index:
                 # set label
                 self.output.label = label[j, :]
                 # calculate the value from input to output layer
@@ -106,7 +114,7 @@ class NeuralNetwork:
                 # update weight
                 self.output.backward()
             result = np.array(result)
-            train_error.append(self._loss(result, label, relabel))
+            train_error.append(self._loss(result, label[index], relabel[index]))
             print(i + 1, train_error[-1])
         return train_error
 
@@ -117,11 +125,14 @@ class NeuralNetwork:
         relabel = self._label_process(label)
         # set learning rate
         Layer.rate = rate
-        for i in range(epoch):
+        index = np.arange(num)
+        for i in np.arange(epoch):
             time1 = time.time()
             result = []
+            # shuffle index
+            self._shuffle_index(index)
             # stochastic gradient descent
-            for j in range(num):
+            for j in index:
                 # set label
                 self.output.label = label[j, :]
                 # calculate the value from input to output layer
@@ -133,7 +144,7 @@ class NeuralNetwork:
                 # update weight
                 self.output.backward()
             result = np.array(result)
-            train_error.append(self._loss(result, label, relabel))
+            train_error.append(self._loss(result, label[index], relabel[index]))
             print(i + 1, train_error[-1])
             if train_error[-1][1] == num:
                 break
@@ -173,9 +184,9 @@ class NeuralNetwork:
             return 2 * precision * recall / (precision + recall)
 
 
-def store(net, path):
+def save(net, path):
     model = [net.model,
-             [net.activation_func, net.output_func]]
+             [net.activation_func, net.output_func, net.shuffle]]
     curr = net.input
     while curr:
         if curr.type == 'v':
@@ -189,7 +200,8 @@ def store(net, path):
 def load(path):
     model = np.load(path)
     net = NeuralNetwork(model[0])
-    net.method(activation=model[1][0], output=model[1][1])
+    net.method(activation=model[1][0], output=model[1][1],
+               shuffle=model[1][2])
     curr = net.input
     index = 2
     while curr:

@@ -24,7 +24,8 @@ if __name__ == "__main__":
     TestLabel = TestL.getLabel()
     TestLabel = minst.hot_encoding(TestLabel)
 
-    DeepNet = nn.load('cnn_dropout_0.4.npy')
+    Path = 'cnn_dropout_0.4.npy'
+    DeepNet = nn.load(Path)
 
     try:
 
@@ -42,9 +43,10 @@ if __name__ == "__main__":
             print(Rate, Epoch)
             print(time2 - time1)
 
+            nn.save(DeepNet, Path)
+
             Argv = input('want to end?\n')
             if Argv == '1':
-                nn.store(DeepNet, 'cnn_dropout_0.4.npy')
                 break
             else:
                 Para = Argv.split()
@@ -52,6 +54,6 @@ if __name__ == "__main__":
                 Epoch = int(Para[1])
 
     except KeyboardInterrupt:
-        nn.store(DeepNet, 'cnn_dropout_0.4.npy')
+        nn.save(DeepNet, Path)
         Result = DeepNet.predict(TestImage, TestLabel)
         print(Result[1], Result[2])

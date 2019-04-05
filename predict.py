@@ -37,3 +37,8 @@ if __name__ == "__main__":
     DeepNet = nn.load('cnn_dropout_0.4.npy')
 
     Result = DeepNet.predict(TestImage, TestLabel)
+    print(Result[1], Result[2])
+
+    Result = DeepNet.predict(TrainImage, TrainLabel)
+    print(Result[1], Result[2])
+
