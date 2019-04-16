@@ -74,4 +74,6 @@ Prediction throughout minst data (10000 instances) for cnn takes about 60s.
 Current best model: model/cnn_triple_dropout_0.3_shuffle.npy
 Accuracy on minst: 99.37%
 
+cnn_train.py and nn_train.py provide train examples for CNN and NN.
+
 If you have any questions, please contact lshang6@wisc.edu.

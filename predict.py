@@ -31,10 +31,11 @@ if __name__ == "__main__":
              ['hidden', 120],
              ['dropout', 0.2],
              ['hidden', 84],
+             ['dropout', 0.2],
              ['output', OutNum]]
     '''
 
-    DeepNet, model = nn.load('model/cnn_triple_dropout_0.3_shuffle.npy')
+    DeepNet, model = nn.load('model/cnn_triple_dropout_0.2_shuffle.npy')
 
     Result = DeepNet.predict(TestImage, TestLabel)
     print(Result[1], Result[2])
