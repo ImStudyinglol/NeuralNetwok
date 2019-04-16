@@ -351,8 +351,5 @@ class Connect(Layer):
         # reinitialize data
         self.data = np.empty((self.num, 1))
 
-    def set_dropout(self, prob):
-        return
-
     def set_activation(self, activation):
         self._next.set_activation(activation)

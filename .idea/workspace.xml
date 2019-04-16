@@ -1,31 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="BookmarkManager">
-    <bookmark url="file://$PROJECT_DIR$/predict.py" line="41" />
+    <bookmark url="file://$PROJECT_DIR$/predict.py" line="43" />
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ee3ea79b-d30a-4167-b003-21eccbdd947d" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/activation/softmax.py" beforeDir="false" afterPath="$PROJECT_DIR$/activation/softmax.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cnn_double_dropout_0.2.npy" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cnn_double_dropout_0.4.npy" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cnn_non_dropout.npy" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cnn_old_dropout.npy" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cnn_triple_dropout_0.3.npy" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cnn_triple_dropout_0.3_shuffle.npy" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cnn_triple_dropout_0.4.npy" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cnn_triple_dropout_0.4_shuffle.npy" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cnn_triple_dropout_0.5.npy" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cnn_triple_dropout_0.5_shuffle.npy" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/function/neural_network.py" beforeDir="false" afterPath="$PROJECT_DIR$/function/neural_network.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/function/standardize.py" beforeDir="false" afterPath="$PROJECT_DIR$/function/standardize.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/layer/cnn_layer.py" beforeDir="false" afterPath="$PROJECT_DIR$/layer/cnn_layer.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/layer/nn_layer.py" beforeDir="false" afterPath="$PROJECT_DIR$/layer/nn_layer.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/predict.py" beforeDir="false" afterPath="$PROJECT_DIR$/predict.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/readme.txt" beforeDir="false" afterPath="$PROJECT_DIR$/readme.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/t.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/train.py" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -56,11 +36,11 @@
     <splitter split-orientation="horizontal" split-proportion="0.4893617">
       <split-first>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-          <file pinned="false" current-in-tab="true">
+          <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/predict.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="285">
-                  <caret line="15" lean-forward="true" selection-start-line="15" selection-end-line="15" />
+                <state relative-caret-position="589">
+                  <caret line="31" column="30" lean-forward="true" selection-start-line="31" selection-start-column="30" selection-end-line="31" selection-end-column="30" />
                   <folding>
                     <element signature="e#0#36#0" expanded="true" />
                   </folding>
@@ -68,10 +48,10 @@
               </provider>
             </entry>
           </file>
-          <file pinned="false" current-in-tab="false">
+          <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/cnn_train.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="57">
+                <state relative-caret-position="-452">
                   <caret line="3" lean-forward="true" selection-start-line="3" selection-end-line="3" />
                   <folding>
                     <element signature="e#0#36#0" expanded="true" />
@@ -96,11 +76,11 @@
       </split-first>
       <split-second>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-          <file pinned="false" current-in-tab="true">
+          <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/layer/nn_layer.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="76">
-                  <caret line="4" selection-start-line="4" selection-end-line="7" selection-end-column="3" />
+                <state relative-caret-position="-703">
+                  <caret line="17" lean-forward="true" selection-start-line="17" selection-end-line="17" />
                   <folding>
                     <element signature="e#0#18#0" expanded="true" />
                   </folding>
@@ -108,11 +88,11 @@
               </provider>
             </entry>
           </file>
-          <file pinned="false" current-in-tab="false">
+          <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/layer/cnn_layer.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="38">
-                  <caret line="2" selection-start-line="2" selection-end-line="5" selection-end-column="3" />
+                <state relative-caret-position="2189">
+                  <caret line="346" column="50" lean-forward="true" selection-start-line="346" selection-start-column="50" selection-end-line="346" selection-end-column="50" />
                 </state>
               </provider>
             </entry>
@@ -203,16 +183,16 @@
         <option value="$PROJECT_DIR$/function/tanh.py" />
         <option value="$PROJECT_DIR$/minst.py" />
         <option value="$PROJECT_DIR$/t.py" />
-        <option value="$PROJECT_DIR$/predict.py" />
         <option value="$PROJECT_DIR$/test.py" />
         <option value="$PROJECT_DIR$/train.py" />
         <option value="$PROJECT_DIR$/cnn_train.py" />
         <option value="$PROJECT_DIR$/nn_train.py" />
         <option value="$PROJECT_DIR$/function/neural_network.py" />
-        <option value="$PROJECT_DIR$/layer/cnn_layer.py" />
         <option value="$PROJECT_DIR$/layer/nn_layer.py" />
         <option value="$PROJECT_DIR$/function/standardize.py" />
         <option value="$PROJECT_DIR$/activation/softmax.py" />
+        <option value="$PROJECT_DIR$/predict.py" />
+        <option value="$PROJECT_DIR$/layer/cnn_layer.py" />
       </list>
     </option>
   </component>
@@ -473,12 +453,12 @@
       <workItem from="1554345957083" duration="4117000" />
       <workItem from="1554396098512" duration="40581000" />
       <workItem from="1554757138980" duration="4008000" />
-      <workItem from="1555454469712" duration="1861000" />
+      <workItem from="1555454469712" duration="2678000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="250160000" />
+    <option name="totallyTimeSpent" value="250977000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -646,23 +626,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/layer/cnn_layer.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="38">
-          <caret line="2" selection-start-line="2" selection-end-line="5" selection-end-column="3" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/layer/nn_layer.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="76">
-          <caret line="4" selection-start-line="4" selection-end-line="7" selection-end-column="3" />
-          <folding>
-            <element signature="e#0#18#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/activation/softmax.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="399">
@@ -689,9 +652,19 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/predict.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="589">
+          <caret line="31" column="30" lean-forward="true" selection-start-line="31" selection-start-column="30" selection-end-line="31" selection-end-column="30" />
+          <folding>
+            <element signature="e#0#36#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/cnn_train.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="57">
+        <state relative-caret-position="-452">
           <caret line="3" lean-forward="true" selection-start-line="3" selection-end-line="3" />
           <folding>
             <element signature="e#0#36#0" expanded="true" />
@@ -699,13 +672,20 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/predict.py">
+    <entry file="file://$PROJECT_DIR$/layer/nn_layer.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="15" lean-forward="true" selection-start-line="15" selection-end-line="15" />
+        <state relative-caret-position="-703">
+          <caret line="17" lean-forward="true" selection-start-line="17" selection-end-line="17" />
           <folding>
-            <element signature="e#0#36#0" expanded="true" />
+            <element signature="e#0#18#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/layer/cnn_layer.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2189">
+          <caret line="346" column="50" lean-forward="true" selection-start-line="346" selection-start-column="50" selection-end-line="346" selection-end-column="50" />
         </state>
       </provider>
     </entry>
