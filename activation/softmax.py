@@ -20,10 +20,6 @@ def get_output(data):
 
 def output_error(output, y):
     # output error for sigmoid function and cross entropy error
-    # if y is not one-hot encoded
-    # error = output.copy()
-    # error[y] = error[y]-1
-    # return error.T
     return output.T-y
 
 

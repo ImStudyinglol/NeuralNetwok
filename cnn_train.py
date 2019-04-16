@@ -1,8 +1,5 @@
 import function.neural_network as nn
-import numpy as np
-import importlib
 import minst.open as minst
-import time
 
 
 if __name__ == "__main__":
@@ -24,64 +21,48 @@ if __name__ == "__main__":
     TestLabel = TestL.getLabel()
     TestLabel = minst.hot_encoding(TestLabel)
 
+    # train data is a (60000, 1, 28, 28) matrix
+    # train label is a (60000, 10) matrix
     FeatNum = TrainImage.shape[1:]
     OutNum = 10
+    Dropout = 0.2
 
     Model = [['input', FeatNum],
              ['convolution', [(5, 5), 8, 2, 1]],
              ['maxpooling', [(2, 2), 2]],
              ['convolution', [(5, 5), 16, 0, 1]],
              ['maxpooling', [(2, 2), 2]],
-             ['dropout', 0.3],
+             ['dropout', Dropout],
              ['hidden', 120],
-             ['dropout', 0.3],
+             ['dropout', Dropout],
              ['hidden', 84],
              ['output', OutNum]]
 
     DeepNet = nn.NeuralNetwork(Model)
     DeepNet.method(activation=Act, output=Out, shuffle=True)
-    Path = 'cnn_double_dropout_0.3.npy'
+    Path = 'cnn.npy'
+
+    print(Model)
+    print(Path)
 
     try:
-        TrainError = DeepNet.cnn_train(TrainImage, TrainLabel, 0.0005, 5)
+        # train with first 100 instances
+        TrainError = DeepNet.train(TrainImage[0:100], TrainLabel[0:100], 0.0005, 5)
+        Result = DeepNet.predict(TestImage[0:100], TestLabel[0:100])
+        print(Result[1], Result[2])
+        nn.save(DeepNet, Path)
+
+        '''
+        TrainError = DeepNet.train(TrainImage, TrainLabel, 0.0002, 5)
         Result = DeepNet.predict(TestImage, TestLabel)
         print(Result[1], Result[2])
         nn.save(DeepNet, Path)
 
-        TrainError = DeepNet.cnn_train(TrainImage, TrainLabel, 0.0002, 5)
+        TrainError = DeepNet.train(TrainImage, TrainLabel, 0.00005, 5)
         Result = DeepNet.predict(TestImage, TestLabel)
         print(Result[1], Result[2])
         nn.save(DeepNet, Path)
-
-        TrainError = DeepNet.cnn_train(TrainImage, TrainLabel, 0.00005, 10)
-        Result = DeepNet.predict(TestImage, TestLabel)
-        print(Result[1], Result[2])
-        nn.save(DeepNet, Path)
-
-        Para = input('leanring rate and epochs\n').split()
-        Rate = float(Para[0])
-        Epoch = int(Para[1])
-        print(Model)
-
-        while 1:
-
-            TrainError = DeepNet.cnn_train(TrainImage, TrainLabel, Rate, Epoch)
-            time1 = time.time()
-            Result = DeepNet.predict(TestImage, TestLabel)
-            time2 = time.time()
-            nn.save(DeepNet, Path)
-            print(Result[1], Result[2])
-            print(Rate, Epoch)
-            print(Model)
-            print(time2 - time1)
-
-            Argv = input('want to end?\n')
-            if Argv == '1':
-                break
-            else:
-                Para = Argv.split()
-                Rate = float(Para[0])
-                Epoch = int(Para[1])
+        '''
 
     except KeyboardInterrupt:
         nn.save(DeepNet, Path)

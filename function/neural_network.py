@@ -1,6 +1,10 @@
 from layer.cnn_layer import *
 import importlib
-import time
+
+'''
+Author: Liang Shang
+File: framework of neural network
+'''
 
 
 class NeuralNetwork:
@@ -57,12 +61,20 @@ class NeuralNetwork:
                 para = layer[1]
                 curr.set_next(MeanPooling(para, curr))
                 curr = curr.get_next()
+            else:
+                raise Exception('wrong model layer')
 
         # initialize output layer
         layer = model[-1]
         outp = layer[1]
         self.output = Output(outp, curr)
         curr.set_next(self.output)
+
+        # setting whether it is a nn or cnn model
+        if self.input.get_next().type == 'h':
+            self.train = self.nn_train
+        else:
+            self.train = self.cnn_train
 
     def method(self, activation=None, output=None, shuffle=False):
         # set method
@@ -79,7 +91,11 @@ class NeuralNetwork:
             self._get_predict = output.get_predict
             self._label_process = output.label_process
         if shuffle:
+            self.shuffle = shuffle
             self._shuffle_index = lambda x: np.random.shuffle(x)
+        else:
+            self.shuffle = shuffle
+            self._shuffle_index = lambda x: None
 
     def _loss(self, result, label, relabel):
         # compute loss and correct/incorrect during this epoch
@@ -116,6 +132,8 @@ class NeuralNetwork:
             result = np.array(result)
             train_error.append(self._loss(result, label[index], relabel[index]))
             print(i + 1, train_error[-1])
+            if train_error[-1][1] == num:
+                break
         return train_error
 
     def cnn_train(self, data, label, rate, epoch):
@@ -127,7 +145,6 @@ class NeuralNetwork:
         Layer.rate = rate
         index = np.arange(num)
         for i in np.arange(epoch):
-            time1 = time.time()
             result = []
             # shuffle index
             self._shuffle_index(index)
@@ -148,7 +165,6 @@ class NeuralNetwork:
             print(i + 1, train_error[-1])
             if train_error[-1][1] == num:
                 break
-            print(time.time() - time1)
         return train_error
 
     def predict(self, data, label):
@@ -214,6 +230,6 @@ def load(path):
             curr.b = model[index][1]
             index += 1
         curr = curr.get_next()
-    return net
+    return net, model
 
 

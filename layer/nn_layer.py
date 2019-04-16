@@ -2,6 +2,11 @@ import numpy as np
 import activation.LReLU as LReLU
 import activation.softmax as softmax
 
+'''
+Author: Liang Shang
+File: layer for nn layers
+'''
+
 
 class Layer:
     _previous = None

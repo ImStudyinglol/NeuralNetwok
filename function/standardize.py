@@ -1,5 +1,9 @@
 import numpy as np
 
+'''
+Author: Liang Shang
+File: standardize method for json files
+'''
 
 # index 0 feature
 # index 1 data

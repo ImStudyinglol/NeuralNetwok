@@ -34,11 +34,13 @@ if __name__ == "__main__":
              ['output', OutNum]]
     '''
 
-    DeepNet = nn.load('cnn_dropout_0.4.npy')
+    DeepNet, model = nn.load('model/cnn_triple_dropout_0.3_shuffle.npy')
 
     Result = DeepNet.predict(TestImage, TestLabel)
     print(Result[1], Result[2])
 
+    '''
     Result = DeepNet.predict(TrainImage, TrainLabel)
     print(Result[1], Result[2])
+    '''
 

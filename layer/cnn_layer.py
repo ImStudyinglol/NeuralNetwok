@@ -1,5 +1,10 @@
 from layer.nn_layer import *
 
+'''
+Author: Liang Shang
+File: layer for cnn layers
+'''
+
 
 class Convolution(Layer):
 
