@@ -1,8 +1,5 @@
 import function.neural_network as nn
-import numpy as np
-import importlib
 import minst.open as minst
-import time
 
 
 if __name__ == "__main__":
@@ -44,4 +41,3 @@ if __name__ == "__main__":
     Result = DeepNet.predict(TrainImage, TrainLabel)
     print(Result[1], Result[2])
     '''
-
